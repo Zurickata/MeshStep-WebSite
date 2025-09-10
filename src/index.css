@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+:root {
+  --mesh-dark: #0a1b36;
+  --mesh-light: #f6f6f6;
+  --mesh-green: #ADEFD1;
+  --mesh-red: #e83b2b;
+}
+
+body {
+  background: var(--mesh-light);
+  color: var(--mesh-dark);
+}
