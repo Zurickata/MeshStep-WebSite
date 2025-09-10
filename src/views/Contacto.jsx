@@ -36,14 +36,14 @@ function Contacto() {
 
   return (
     <section className="py-20 container mx-auto px-6">
-      <h2 className="text-3xl font-bold text-[#0a1b36] text-center mb-12">
+      <h2 className="text-4xl font-bold text-[#0a1b36] text-center mb-12">
         Contáctanos
       </h2>
 
       <div className="flex flex-col lg:flex-row gap-12">
         {/* Formulario */}
         <div className="lg:w-1/2 bg-white shadow-md rounded-lg p-8">
-          <h3 className="text-xl font-semibold mb-6 text-[#0a1b36]">
+          <h3 className="text-2xl font-semibold mb-6 text-[#0a1b36]">
             Envíanos un mensaje
           </h3>
           <form ref={form} onSubmit={sendEmail} className="space-y-4">
@@ -97,7 +97,7 @@ function Contacto() {
             </div> */}
 
             <div>
-                <h3 className="text-2xl font-bold text-[#0a1b36] mb-4">
+                <h3 className="text-2xl font-semibold text-[#0a1b36] mb-4">
                     Nuestras Redes
                 </h3>
                 <div className="flex gap-4">
@@ -130,7 +130,7 @@ function Contacto() {
 
           {/* Ven a vernos */}
           <div>
-            <h3 className="text-2xl font-bold text-[#0a1b36] mb-4">
+            <h3 className="text-2xl font-semibold text-[#0a1b36] mb-4">
               ¡Ven a vernos en la Feria de SW!
             </h3>
             <div className="flex items-center gap-4 mb-2">

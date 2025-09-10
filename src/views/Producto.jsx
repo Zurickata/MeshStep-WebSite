@@ -1,79 +1,172 @@
+import { FaCube, FaProjectDiagram, FaFileExport, FaUserGraduate, FaChalkboardTeacher, FaFlask } from "react-icons/fa";
+
 function Producto() {
   return (
-    <section className="py-20 container mx-auto px-6">
-      <h2 className="text-3xl font-bold text-[#0a1b36] mb-6 text-center">
-        Nuestro Producto
-      </h2>
-      <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center mb-12">
-        MeshStep resuelve la falta de visualización de pasos intermedios
-        en el mallado geométrico, ofreciendo una solución educativa y
-        práctica.
-      </p>
+    <div className="space-y-24 py-20">
+      {/* HERO INTRODUCTORIO */}
+      <section className="container mx-auto px-6 text-center">
+        <h1 className="text-4xl font-bold text-[#0a1b36] mb-6">
+          MeshStep: una nueva forma de comprender el mallado
+        </h1>
+        <p className="max-w-3xl mx-auto text-lg text-gray-700 mb-10">
+          MeshStep es una herramienta interactiva que permite visualizar y analizar 
+          el proceso de refinamiento de mallas en 2D y 3D, paso a paso y con métricas 
+          de calidad integradas. Diseñada para estudiantes, profesores e investigadores, 
+          combina un enfoque educativo con utilidades prácticas de investigación.
+        </p>
+        <img
+          src="/assets/product-refinamiento.png"
+          alt="Visualización de refinamiento MeshStep"
+          className="mx-auto rounded-lg shadow-lg max-w-3xl"
+        />
+      </section>
 
-      {/* Features */}
-      <div className="grid md:grid-cols-3 gap-8 mb-20">
-        <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h3 className="text-xl font-semibold text-[#0a1b36] mb-3">
-            Visualización paso a paso
-          </h3>
-          <p className="text-gray-700">
-            Comprende cómo los algoritmos refinan y dividen las figuras
-            en cada nivel del proceso.
-          </p>
+      {/* FUNCIONALIDADES CLAVE */}
+      <section className="bg-[#f6f6f6] py-16">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-[#0a1b36] text-center mb-12">
+            Funcionalidades Clave
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-white rounded-lg shadow-md p-8">
+              <FaCube className="text-4xl text-[#e83b2b] mb-4" />
+              <h3 className="text-xl font-semibold mb-3 text-[#0a1b36]">
+                Visualización de Niveles de Refinamiento
+              </h3>
+              <p className="text-gray-700">
+                Explora cómo evoluciona la malla al aplicar distintos niveles de 
+                refinamiento sobre una nube de puntos, tanto en 2D como en 3D. 
+                Observa el proceso de forma clara y controlada.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-8">
+              <FaProjectDiagram className="text-4xl text-[#e83b2b] mb-4" />
+              <h3 className="text-xl font-semibold mb-3 text-[#0a1b36]">
+                Ejecución paso a paso del algoritmo
+              </h3>
+              <p className="text-gray-700">
+                Visualiza cómo el algoritmo divide cuadrantes, elimina regiones 
+                fuera de la nube, ajusta vértices y refina progresivamente. 
+                Ideal para comprender cada decisión del proceso de mallado.
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h3 className="text-xl font-semibold text-[#0a1b36] mb-3">
-            Métricas en tiempo real
-          </h3>
-          <p className="text-gray-700">
-            Evalúa ángulos, distorsiones y calidad de las mallas a
-            medida que se generan.
-          </p>
-        </div>
-        <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h3 className="text-xl font-semibold text-[#0a1b36] mb-3">
-            Enfoque educativo
-          </h3>
-          <p className="text-gray-700">
-            Diseñado para estudiantes, profesores e investigadores que
-            buscan aprender y enseñar de manera práctica.
-          </p>
-        </div>
-      </div>
+      </section>
 
-      {/* Comparativa */}
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse bg-white rounded-xl shadow">
-          <thead className="bg-[#0a1b36] text-[#f6f6f6]">
-            <tr>
-              <th className="px-4 py-3 text-left">Característica</th>
-              <th className="px-4 py-3">MeshStep</th>
-              <th className="px-4 py-3">Detri2</th>
-              <th className="px-4 py-3">Gmsh</th>
-              <th className="px-4 py-3">ANSYS</th>
-            </tr>
-          </thead>
-          <tbody className="text-center text-gray-700">
-            <tr className="border-t">
-              <td className="py-3 text-left px-4">Visualización paso a paso</td>
-              <td>✔️</td><td>❌</td><td>❌</td><td>❌</td>
-            </tr>
-            <tr className="border-t">
-              <td className="py-3 text-left px-4">Métricas integradas</td>
-              <td>✔️</td><td>❌</td><td>❌</td><td>✔️</td>
-            </tr>
-            <tr className="border-t">
-              <td className="py-3 text-left px-4">Enfoque educativo</td>
-              <td>✔️</td><td>❌</td><td>❌</td><td>❌</td>
-            </tr>
-            <tr className="border-t">
-              <td className="py-3 text-left px-4">Identificación temprana de errores</td>
-              <td>✔️</td><td>❌</td><td>✔️</td><td>✔️</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+      {/* PANEL DE MÉTRICAS */}
+      <section className="container mx-auto px-6 text-center">
+        <h2 className="text-3xl font-bold text-[#0a1b36] mb-8">
+          Métricas de Calidad en Tiempo Real
+        </h2>
+        <p className="max-w-3xl mx-auto text-gray-700 mb-10">
+          El panel lateral de MeshStep muestra estadísticas clave como niveles 
+          de refinamiento, ángulos críticos, control de animación y detalles 
+          topológicos. Esto permite validar la calidad de la malla de manera 
+          sencilla y rápida.
+        </p>
+        <img
+          src="/assets/product-metrics.png"
+          alt="Panel de métricas MeshStep"
+          className="mx-auto rounded-lg shadow-lg max-w-md"
+        />
+      </section>
+
+      {/* COLOREO */}
+      <section className="bg-[#f6f6f6] py-16">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-[#0a1b36] mb-8">
+            Coloreo por Métricas
+          </h2>
+          <p className="max-w-3xl mx-auto text-gray-700 mb-10">
+            Identifica fácilmente regiones problemáticas coloreando los elementos 
+            según distintas métricas: área, ángulo mínimo o relación de aspecto. 
+            Una herramienta visual para detectar y analizar irregularidades.
+          </p>
+          <img
+            src="/assets/product-coloreo.png"
+            alt="Coloreo por métricas MeshStep"
+            className="mx-auto rounded-lg shadow-lg max-w-md"
+          />
+        </div>
+      </section>
+
+      {/* EXPORTACIÓN */}
+      <section className="container mx-auto px-6 text-center">
+        <h2 className="text-3xl font-bold text-[#0a1b36] mb-6">
+          Exportación de Estados Intermedios
+        </h2>
+        <p className="max-w-3xl mx-auto text-gray-700 mb-10">
+          Guarda y exporta la malla en cualquier etapa del refinamiento. Esta 
+          funcionalidad es especialmente útil para investigadores y profesores, 
+          quienes pueden analizar y reutilizar configuraciones específicas del proceso.
+        </p>
+        <FaFileExport className="text-6xl text-[#e83b2b] mx-auto" />
+      </section>
+
+      {/* COMUNIDAD OBJETIVO */}
+      <section className="bg-[#f6f6f6] py-16">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-[#0a1b36] mb-12">
+            Pensado para la Comunidad Académica e Investigadora
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg shadow-md p-8">
+              <FaUserGraduate className="text-4xl text-[#e83b2b] mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold text-[#0a1b36] mb-2">
+                Estudiantes
+              </h3>
+              <p className="text-gray-700">
+                Comprenden algoritmos abstractos de forma visual e interactiva.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-8">
+              <FaChalkboardTeacher className="text-4xl text-[#e83b2b] mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold text-[#0a1b36] mb-2">
+                Profesores
+              </h3>
+              <p className="text-gray-700">
+                Enseñan con un recurso práctico y atractivo que conecta teoría con práctica.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-8">
+              <FaFlask className="text-4xl text-[#e83b2b] mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold text-[#0a1b36] mb-2">
+                Investigadores
+              </h3>
+              <p className="text-gray-700">
+                Evalúan mallas y exportan estados intermedios, optimizando su tiempo de trabajo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA FINAL */}
+      <section className="bg-[#0a1b36] text-[#f6f6f6] py-16 text-center">
+        <h2 className="text-3xl font-bold mb-6">
+          MeshStep: una herramienta hecha para aprender, enseñar e investigar
+        </h2>
+        <p className="max-w-2xl mx-auto text-gray-300 mb-8">
+          Integra visualización, métricas y exportación en una única plataforma 
+          pensada para la comunidad académica e investigadora.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contacto"
+            className="bg-[#ADEFD1] text-[#0a1b36] font-semibold px-6 py-3 rounded-lg shadow hover:bg-white transition"
+          >
+            Contáctanos
+          </a>
+          <a
+            href="/equipo"
+            className="border-2 border-[#ADEFD1] text-[#ADEFD1] font-semibold px-6 py-3 rounded-lg shadow hover:bg-[#ADEFD1] hover:text-[#0a1b36] transition"
+          >
+            Conoce al equipo
+          </a>
+        </div>
+      </section>
+    </div>
   );
 }
 
