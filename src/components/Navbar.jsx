@@ -1,16 +1,22 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+import logo from "../assets/logo_2.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="bg-[#0a1b36] text-[#f6f6f6] shadow-md">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/" className="text-2xl font-bold text-[#ADEFD1]">
-          MeshStep
+      <div className="container mx-auto px-6  flex justify-between items-center">
+        {/* Logo + nombre */}
+        <Link to="/" className="flex items-center space-x-3">
+          <img
+            src={logo} // 👈 si usas public/assets/logo.png, pon "/assets/logo.png"
+            alt="MeshStep Logo"
+            className="w-20 h-20 object-contain"
+          />
+          <span className="text-2xl font-bold text-[#ADEFD1]">MeshStep</span>
         </Link>
 
         {/* Links desktop */}

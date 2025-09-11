@@ -1,6 +1,5 @@
-import { FaChalkboardTeacher, FaUserGraduate, FaFlask } from "react-icons/fa";
+import { FaChalkboardTeacher, FaUserGraduate, FaFlask, FaCheck } from "react-icons/fa";
 import placeholderImage from "../assets/hero-placeholder.png";
-import lonso from "../assets/lonso.png";
 
 function Home() {
   return (
@@ -67,7 +66,7 @@ function Home() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-              <img src="/assets/feature-steps.svg" alt="Paso a paso" className="w-16 h-16 mx-auto mb-4" />
+              {/* <img src="/assets/feature-steps.svg" alt="Paso a paso" className="w-16 h-16 mx-auto mb-4" /> */}
               <h3 className="text-xl font-semibold text-[#0a1b36] mb-3">
                 Visualización paso a paso
               </h3>
@@ -77,7 +76,7 @@ function Home() {
               </p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-              <img src="/assets/feature-steps.svg" alt="Paso a paso" className="w-16 h-16 mx-auto mb-4" />
+              {/* <img src="/assets/feature-steps.svg" alt="Paso a paso" className="w-16 h-16 mx-auto mb-4" /> */}
               <h3 className="text-xl font-semibold text-[#0a1b36] mb-3">
                 Métricas en tiempo real
               </h3>
@@ -87,7 +86,7 @@ function Home() {
               </p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-              <img src="/assets/feature-steps.svg" alt="Paso a paso" className="w-16 h-16 mx-auto mb-4" />
+              {/* <img src="/assets/feature-steps.svg" alt="Paso a paso" className="w-16 h-16 mx-auto mb-4" /> */}
               <h3 className="text-xl font-semibold text-[#0a1b36] mb-3">
                 Enfoque educativo
               </h3>
@@ -106,22 +105,33 @@ function Home() {
           ¿Por qué elegir MeshStep?
         </h2>
         <ul className="space-y-4 max-w-2xl mx-auto text-lg text-gray-700">
-          <li>✅ Muestra cada iteración del mallado</li>
-          <li>✅ Integra métricas de calidad directamente</li>
-          <li>✅ Pensado para el aprendizaje y la investigación</li>
-          <li>✅ Compatible con formatos estándar como .msh y .vtk</li>
+          <li className="flex items-center gap-3 justify-center">
+            <FaCheck className="text-[#e83b2b] w-6 h-6 flex-shrink-0" />
+            <span>Muestra cada iteración del mallado</span>
+          </li>
+          <li className="flex items-center gap-3 justify-center">
+            <FaCheck className="text-[#e83b2b] w-6 h-6 flex-shrink-0" />
+            <span>Integra métricas de calidad directamente</span>
+          </li>
+          <li className="flex items-center gap-3 justify-center">
+            <FaCheck className="text-[#e83b2b] w-6 h-6 flex-shrink-0" />
+            <span>Pensado para el aprendizaje y la investigación</span>
+          </li>
+          <li className="flex items-center gap-3 justify-center">
+            <FaCheck className="text-[#e83b2b] w-6 h-6 flex-shrink-0" />
+            <span>Compatible con formatos estándar como .msh y .vtk</span>
+          </li>
         </ul>
       </section>
 
       {/* USUARIOS */}
-      <section className="bg-[#f6f6f6] pb-16">
+      <section className="bg-[#f6f6f6]">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-[#0a1b36] mb-12">
             ¿Quiénes usan MeshStep?
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-              <img src="/assets/user-student.svg" alt="Estudiante" className="w-20 h-20 mx-auto mb-4" />
               <FaUserGraduate className="text-4xl text-[#e83b2b] mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-[#0a1b36] mb-2">
                 Estudiantes
@@ -132,7 +142,6 @@ function Home() {
               </p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-              <img src="/assets/user-student.svg" alt="Estudiante" className="w-20 h-20 mx-auto mb-4" />
               <FaChalkboardTeacher className="text-4xl text-[#e83b2b] mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-[#0a1b36] mb-2">
                 Profesores
@@ -143,7 +152,6 @@ function Home() {
               </p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-              <img src="/assets/user-student.svg" alt="Estudiante" className="w-20 h-20 mx-auto mb-4" />
               <FaFlask className="text-4xl text-[#e83b2b] mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-[#0a1b36] mb-2">
                 Investigadores
@@ -158,7 +166,7 @@ function Home() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="bg-[#0a1b36] text-[#f6f6f6] py-16 text-center">
+      <section className="bg-[#0a1b36] text-[#f6f6f6] p-10 text-center">
         <h2 className="text-3xl font-bold mb-6">
           Aprende, enseña e investiga con MeshStep
         </h2>

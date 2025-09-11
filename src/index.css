@@ -11,3 +11,10 @@ body {
   background: var(--mesh-light);
   color: var(--mesh-dark);
 }
+
+/* regla global para evitar que imágenes desborden en móviles */
+img {
+  max-width: 80%;
+  height: auto;
+  display: block;
+}

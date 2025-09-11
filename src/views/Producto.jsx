@@ -1,8 +1,13 @@
 import { FaCube, FaProjectDiagram, FaFileExport, FaUserGraduate, FaChalkboardTeacher, FaFlask } from "react-icons/fa";
+import a from "../assets/a.png"
+import a2 from "../assets/a2.png"
+import metricas1 from "../assets/metricas_1.png"
+import metricas3 from "../assets/metricas_3.png"
+import metricas4 from "../assets/metricas_4.png"
 
 function Producto() {
   return (
-    <div className="space-y-24 py-20">
+    <div className="space-y-24 pt-20">
       {/* HERO INTRODUCTORIO */}
       <section className="container mx-auto px-6 text-center">
         <h1 className="text-4xl font-bold text-[#0a1b36] mb-6">
@@ -15,14 +20,14 @@ function Producto() {
           combina un enfoque educativo con utilidades prácticas de investigación.
         </p>
         <img
-          src="/assets/product-refinamiento.png"
+          src={a}
           alt="Visualización de refinamiento MeshStep"
-          className="mx-auto rounded-lg shadow-lg max-w-3xl"
+          className="mx-auto rounded-lg shadow-lg w-full max-w-3xl h-auto object-contain"
         />
       </section>
 
       {/* FUNCIONALIDADES CLAVE */}
-      <section className="bg-[#f6f6f6] py-16">
+      <section className="bg-[#f6f6f6]">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-[#0a1b36] text-center mb-12">
             Funcionalidades Clave
@@ -65,15 +70,32 @@ function Producto() {
           topológicos. Esto permite validar la calidad de la malla de manera 
           sencilla y rápida.
         </p>
-        <img
-          src="/assets/product-metrics.png"
-          alt="Panel de métricas MeshStep"
-          className="mx-auto rounded-lg shadow-lg max-w-md"
-        />
+
+        {/* mosaico responsivo: imagen principal a la izquierda, dos apiladas a la derecha */}
+        <div className="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
+          <img
+            src={metricas1}
+            alt="Panel de métricas - vista principal"
+            className="rounded-lg shadow-lg w-full h-56 md:h-64 object-cover"
+          />
+
+          <div className="flex flex-col gap-4">
+            <img
+              src={metricas3}
+              alt="Métrica adicional 1"
+              className="rounded-lg shadow-lg w-full h-28 md:h-32 object-cover"
+            />
+            <img
+              src={metricas4}
+              alt="Métrica adicional 2"
+              className="rounded-lg shadow-lg w-full h-28 md:h-32 object-cover"
+            />
+          </div>
+        </div>
       </section>
 
       {/* COLOREO */}
-      <section className="bg-[#f6f6f6] py-16">
+      <section className="bg-[#f6f6f6]">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-[#0a1b36] mb-8">
             Coloreo por Métricas
@@ -84,9 +106,9 @@ function Producto() {
             Una herramienta visual para detectar y analizar irregularidades.
           </p>
           <img
-            src="/assets/product-coloreo.png"
+            src={a2}
             alt="Coloreo por métricas MeshStep"
-            className="mx-auto rounded-lg shadow-lg max-w-md"
+            className="mx-auto rounded-lg shadow-lg w-full max-w-3xl h-auto object-contain"
           />
         </div>
       </section>
@@ -105,7 +127,7 @@ function Producto() {
       </section>
 
       {/* COMUNIDAD OBJETIVO */}
-      <section className="bg-[#f6f6f6] py-16">
+      <section className="bg-[#f6f6f6]">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-[#0a1b36] mb-12">
             Pensado para la Comunidad Académica e Investigadora
@@ -143,7 +165,7 @@ function Producto() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="bg-[#0a1b36] text-[#f6f6f6] py-16 text-center">
+      <section className="bg-[#0a1b36] text-[#f6f6f6] p-10 text-center">
         <h2 className="text-3xl font-bold mb-6">
           MeshStep: una herramienta hecha para aprender, enseñar e investigar
         </h2>
@@ -151,7 +173,7 @@ function Producto() {
           Integra visualización, métricas y exportación en una única plataforma 
           pensada para la comunidad académica e investigadora.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mx-auto">
           <a
             href="/contacto"
             className="bg-[#ADEFD1] text-[#0a1b36] font-semibold px-6 py-3 rounded-lg shadow hover:bg-white transition"

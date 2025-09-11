@@ -1,5 +1,5 @@
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo_2.png";
 
 function Equipo() {
   const members = [
@@ -7,42 +7,36 @@ function Equipo() {
       name: "Francisca Romero",
       role: "Scrum Master",
       img: "/assets/team/francisca.jpg",
-      instagram: "https://instagram.com/",
       linkedin: "https://www.linkedin.com/in/francisca-romero-gonzalez",
     },
     {
       name: "Rodrigo Ramírez",
       role: "Product Owner",
       img: "/assets/team/rodrigo.jpg",
-      instagram: "https://instagram.com/",
       linkedin: "https://www.linkedin.com/in/rodrigo-ramirez-catrileo",
     },
     {
       name: "Diego Acevedo",
       role: "Comunicación & Marketing",
       img: "/assets/team/diego.jpg",
-      instagram: "https://instagram.com/",
       linkedin: "https://www.linkedin.com/in/diego-acevedo-santander-369721358/",
     },
     {
       name: "Vicente Mackenzie",
       role: "Testing",
       img: "/assets/team/vicente.jpg",
-      instagram: "https://instagram.com/",
       linkedin: "https://www.linkedin.com/in/vicente-mackenzie/",
     },
     {
       name: "Franco Alday",
       role: "Tecnologías",
       img: "/assets/team/franco.jpg",
-      instagram: "https://instagram.com/",
       linkedin: "https://www.linkedin.com/in/franco-alday-3b2b55265/",
     },
     {
       name: "Florencia Ramírez",
       role: "Diseño + UX",
       img: "/assets/team/florencia.jpg",
-      instagram: "https://instagram.com/",
       linkedin: "https://www.linkedin.com/in/florencia-ramirez-sancristoful",
     },
   ];
@@ -119,15 +113,6 @@ function Equipo() {
                     <p className="text-gray-600">{m.role}</p>
                   </div>
                   <div className="flex gap-3">
-                    {m.instagram && (
-                      <a
-                        href={m.instagram}
-                        target="_blank"
-                        className="w-10 h-10 bg-[#ADEFD1] rounded-full flex items-center justify-center hover:bg-[#e83b2b] transition"
-                      >
-                        <FaInstagram className="text-[#0a1b36]" />
-                      </a>
-                    )}
                     {m.linkedin && (
                       <a
                         href={m.linkedin}
