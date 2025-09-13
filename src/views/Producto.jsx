@@ -1,4 +1,6 @@
 import { FaCube, FaProjectDiagram, FaFileExport, FaUserGraduate, FaChalkboardTeacher, FaFlask } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import a from "../assets/a.png"
 import a2 from "../assets/a2.png"
 import metricas1 from "../assets/metricas_1.png"
@@ -10,19 +12,35 @@ function Producto() {
     <div className="space-y-24 pt-20">
       {/* HERO INTRODUCTORIO */}
       <section className="container mx-auto px-6 text-center">
-        <h1 className="text-4xl font-bold text-[#0a1b36] mb-6">
+        <motion.h1
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-bold text-[#0a1b36] mb-6"
+        >
           MeshStep: una nueva forma de comprender el mallado
-        </h1>
-        <p className="max-w-3xl mx-auto text-lg text-gray-700 mb-10">
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="max-w-3xl mx-auto text-lg text-gray-700 mb-10"
+        >
           MeshStep es una herramienta interactiva que permite visualizar y analizar 
           el proceso de refinamiento de mallas en 2D y 3D, paso a paso y con métricas 
           de calidad integradas. Diseñada para estudiantes, profesores e investigadores, 
           combina un enfoque educativo con utilidades prácticas de investigación.
-        </p>
-        <img
+        </motion.p>
+
+        <motion.img
           src={a}
           alt="Visualización de refinamiento MeshStep"
-          className="mx-auto rounded-lg shadow-lg w-full max-w-3xl h-auto object-contain"
+          className="mx-auto rounded-lg shadow-lg w-full max-w-4xl h-auto object-contain"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         />
       </section>
 
@@ -33,28 +51,33 @@ function Producto() {
             Funcionalidades Clave
           </h2>
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white rounded-lg shadow-md p-8">
-              <FaCube className="text-4xl text-[#e83b2b] mb-4" />
-              <h3 className="text-xl font-semibold mb-3 text-[#0a1b36]">
-                Visualización de Niveles de Refinamiento
-              </h3>
-              <p className="text-gray-700">
-                Explora cómo evoluciona la malla al aplicar distintos niveles de 
-                refinamiento sobre una nube de puntos, tanto en 2D como en 3D. 
-                Observa el proceso de forma clara y controlada.
-              </p>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-8">
-              <FaProjectDiagram className="text-4xl text-[#e83b2b] mb-4" />
-              <h3 className="text-xl font-semibold mb-3 text-[#0a1b36]">
-                Ejecución paso a paso del algoritmo
-              </h3>
-              <p className="text-gray-700">
-                Visualiza cómo el algoritmo divide cuadrantes, elimina regiones 
-                fuera de la nube, ajusta vértices y refina progresivamente. 
-                Ideal para comprender cada decisión del proceso de mallado.
-              </p>
-            </div>
+            {[
+              {
+                icon: <FaCube className="text-4xl text-[#e83b2b] mb-4" />,
+                title: "Visualización de Niveles de Refinamiento",
+                desc: "Explora cómo evoluciona la malla al aplicar distintos niveles de refinamiento sobre una nube de puntos, tanto en 2D como en 3D. Observa el proceso de forma clara y controlada.",
+              },
+              {
+                icon: <FaProjectDiagram className="text-4xl text-[#e83b2b] mb-4" />,
+                title: "Ejecución paso a paso del algoritmo",
+                desc: "Visualiza cómo el algoritmo divide cuadrantes, elimina regiones fuera de la nube, ajusta vértices y refina progresivamente. Ideal para comprender cada decisión del proceso de mallado.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.2, duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-lg shadow-md p-8 hover:scale-105 transition-transform"
+              >
+                {item.icon}
+                <h3 className="text-xl font-semibold mb-3 text-[#0a1b36]">
+                  {item.title}
+                </h3>
+                <p className="text-gray-700">{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -71,28 +94,40 @@ function Producto() {
           sencilla y rápida.
         </p>
 
-        {/* mosaico responsivo: imagen principal a la izquierda, dos apiladas a la derecha */}
-        <div className="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
-          <img
+        <div className="max-w-xl mx-auto flex flex-col items-center md:flex-row gap-4 md:items-center">
+          <motion.img
             src={metricas1}
             alt="Panel de métricas - vista principal"
-            className="rounded-lg shadow-lg w-full h-56 md:h-64 object-cover"
+            className="rounded-lg shadow-lg object-cover"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
           />
 
           <div className="flex flex-col gap-4">
-            <img
+            <motion.img
               src={metricas3}
               alt="Métrica adicional 1"
-              className="rounded-lg shadow-lg w-full h-28 md:h-32 object-cover"
+              className="rounded-lg shadow-lg object-cover"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              viewport={{ once: true }}
             />
-            <img
+            <motion.img
               src={metricas4}
               alt="Métrica adicional 2"
-              className="rounded-lg shadow-lg w-full h-28 md:h-32 object-cover"
+              className="rounded-lg shadow-lg object-cover"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              viewport={{ once: true }}
             />
           </div>
         </div>
       </section>
+
 
       {/* COLOREO */}
       <section className="bg-[#f6f6f6]">
@@ -108,7 +143,7 @@ function Producto() {
           <img
             src={a2}
             alt="Coloreo por métricas MeshStep"
-            className="mx-auto rounded-lg shadow-lg w-full max-w-3xl h-auto object-contain"
+            className="mx-auto rounded-lg shadow-lg w-full max-w-4xl h-auto object-contain"
           />
         </div>
       </section>
@@ -165,29 +200,35 @@ function Producto() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="bg-[#0a1b36] text-[#f6f6f6] p-10 text-center">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="bg-[#0a1b36] text-[#f6f6f6] p-10 text-center"
+      >
         <h2 className="text-3xl font-bold mb-6">
-          MeshStep: una herramienta hecha para aprender, enseñar e investigar
+          Aprende, enseña e investiga con MeshStep
         </h2>
         <p className="max-w-2xl mx-auto text-gray-300 mb-8">
-          Integra visualización, métricas y exportación en una única plataforma 
-          pensada para la comunidad académica e investigadora.
+          Una herramienta educativa y práctica que transforma la manera en que
+          comprendemos los algoritmos de mallado.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mx-auto">
-          <a
-            href="/contacto"
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="bg-[#ADEFD1] text-[#0a1b36] font-semibold px-6 py-3 rounded-lg shadow hover:bg-white transition"
           >
-            Contáctanos
-          </a>
-          <a
-            href="/equipo"
+            Conoce más
+          </button>
+          <Link
+            to="/contacto"
             className="border-2 border-[#ADEFD1] text-[#ADEFD1] font-semibold px-6 py-3 rounded-lg shadow hover:bg-[#ADEFD1] hover:text-[#0a1b36] transition"
           >
-            Conoce al equipo
-          </a>
+            Contáctanos
+          </Link>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

@@ -1,30 +1,43 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../assets/logo_2.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const linkClasses = ({ isActive }) =>
+    `transition ${
+      isActive ? "text-[#ADEFD1] font-semibold" : "hover:text-[#ADEFD1]"
+    }`;
+
   return (
     <header className="bg-[#0a1b36] text-[#f6f6f6] shadow-md">
-      <div className="container mx-auto px-6  flex justify-between items-center">
+      <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo + nombre */}
-        <Link to="/" className="flex items-center space-x-3">
+        <NavLink to="/" className="flex items-center space-x-3">
           <img
-            src={logo} // 👈 si usas public/assets/logo.png, pon "/assets/logo.png"
+            src={logo}
             alt="MeshStep Logo"
-            className="w-20 h-20 object-contain"
+            className="w-24 h-24 object-contain"
           />
-          <span className="text-2xl font-bold text-[#ADEFD1]">MeshStep</span>
-        </Link>
+          <span className="text-3xl font-bold text-[#ADEFD1]">MeshStep</span>
+        </NavLink>
 
         {/* Links desktop */}
         <nav className="space-x-6 hidden md:flex">
-          <Link to="/" className="hover:text-[#ADEFD1]">Inicio</Link>
-          <Link to="/producto" className="hover:text-[#ADEFD1]">Producto</Link>
-          <Link to="/equipo" className="hover:text-[#ADEFD1]">Equipo</Link>
-          <Link to="/contacto" className="hover:text-[#ADEFD1]">Contacto</Link>
+          <NavLink to="/" className={linkClasses} end>
+            Inicio
+          </NavLink>
+          <NavLink to="/producto" className={linkClasses}>
+            Producto
+          </NavLink>
+          <NavLink to="/equipo" className={linkClasses}>
+            Equipo
+          </NavLink>
+          <NavLink to="/contacto" className={linkClasses}>
+            Contacto
+          </NavLink>
         </nav>
 
         {/* Botón hamburguesa (solo mobile) */}
@@ -40,34 +53,18 @@ function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-[#0a1b36] border-t border-gray-700">
           <nav className="flex flex-col px-6 py-4 space-y-3">
-            <Link
-              to="/"
-              className="hover:text-[#ADEFD1]"
-              onClick={() => setIsOpen(false)}
-            >
+            <NavLink to="/" className={linkClasses} end onClick={() => setIsOpen(false)}>
               Inicio
-            </Link>
-            <Link
-              to="/producto"
-              className="hover:text-[#ADEFD1]"
-              onClick={() => setIsOpen(false)}
-            >
+            </NavLink>
+            <NavLink to="/producto" className={linkClasses} onClick={() => setIsOpen(false)}>
               Producto
-            </Link>
-            <Link
-              to="/equipo"
-              className="hover:text-[#ADEFD1]"
-              onClick={() => setIsOpen(false)}
-            >
+            </NavLink>
+            <NavLink to="/equipo" className={linkClasses} onClick={() => setIsOpen(false)}>
               Equipo
-            </Link>
-            <Link
-              to="/contacto"
-              className="hover:text-[#ADEFD1]"
-              onClick={() => setIsOpen(false)}
-            >
+            </NavLink>
+            <NavLink to="/contacto" className={linkClasses} onClick={() => setIsOpen(false)}>
               Contacto
-            </Link>
+            </NavLink>
           </nav>
         </div>
       )}

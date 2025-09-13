@@ -1,42 +1,49 @@
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
 import logo from "../assets/logo_2.png";
+import foto_rodrigo from "../assets/team/rodrigo.webp";
+import foto_francisca from "../assets/team/fran.webp";
+import foto_diego from "../assets/team/diego.webp";
+import foto_mackenzie from "../assets/team/mackenzie.webp";
+import foto_franco from "../assets/team/franco.webp";
+import foto_flo from "../assets/team/flo.webp";
 
 function Equipo() {
   const members = [
     {
       name: "Francisca Romero",
       role: "Scrum Master",
-      img: "/assets/team/francisca.jpg",
+      img: foto_francisca,
       linkedin: "https://www.linkedin.com/in/francisca-romero-gonzalez",
     },
     {
       name: "Rodrigo Ramírez",
       role: "Product Owner",
-      img: "/assets/team/rodrigo.jpg",
+      img: foto_rodrigo,
       linkedin: "https://www.linkedin.com/in/rodrigo-ramirez-catrileo",
     },
     {
       name: "Diego Acevedo",
       role: "Comunicación & Marketing",
-      img: "/assets/team/diego.jpg",
+      img: foto_diego,
       linkedin: "https://www.linkedin.com/in/diego-acevedo-santander-369721358/",
     },
     {
       name: "Vicente Mackenzie",
       role: "Testing",
-      img: "/assets/team/vicente.jpg",
+      img: foto_mackenzie,
       linkedin: "https://www.linkedin.com/in/vicente-mackenzie/",
     },
     {
       name: "Franco Alday",
       role: "Tecnologías",
-      img: "/assets/team/franco.jpg",
+      img: foto_franco,
       linkedin: "https://www.linkedin.com/in/franco-alday-3b2b55265/",
     },
     {
       name: "Florencia Ramírez",
       role: "Diseño + UX",
-      img: "/assets/team/florencia.jpg",
+      img: foto_flo,
       linkedin: "https://www.linkedin.com/in/florencia-ramirez-sancristoful",
     },
   ];
@@ -45,16 +52,34 @@ function Equipo() {
     <section className="pb-20 container mx-auto px-6 space-y-16">
       {/* Logo grande */}
       <div className="text-center">
-        <img
+        <motion.img
           src={logo}
           alt="Logo MeshStep"
-          className="mx-auto w-70 h-70 object-contain mb-6"
+          className="mx-auto w-60 h-60 object-contain"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         />
-        <h1 className="text-4xl font-bold text-[#0a1b36]">Nosotros</h1>
+        <motion.h1
+          className="text-4xl font-bold text-[#0a1b36] mt-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Nosotros
+        </motion.h1>
       </div>
 
       {/* Descripción general */}
-      <div className="max-w-3xl mx-auto text-center text-gray-700">
+      <motion.div
+        className="max-w-3xl mx-auto text-center text-gray-700"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <p className="text-lg">
           MeshStep nace en 2025 conformado por un equipo de estudiantes de la
           Universidad Técnica Federico Santa María, con el objetivo de
@@ -63,27 +88,36 @@ function Equipo() {
           2D y 3D, apoyando a estudiantes, docentes e investigadores en su
           aprendizaje y trabajo.
         </p>
-      </div>
+      </motion.div>
 
       {/* Misión y Visión */}
       <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        <div className="bg-white shadow-md rounded-lg p-8 border-t-4 border-[#ADEFD1]">
-          <h2 className="text-2xl font-bold text-[#0a1b36] mb-4">Misión</h2>
-          <p className="text-gray-700">
-            Entregar una herramienta educativa e interactiva que facilite la
-            comprensión de los procesos de mallado geométrico, promoviendo un
-            aprendizaje más práctico y significativo en la educación superior.
-          </p>
-        </div>
-        <div className="bg-white shadow-md rounded-lg p-8 border-t-4 border-[#e83b2b]">
-          <h2 className="text-2xl font-bold text-[#0a1b36] mb-4">Visión</h2>
-          <p className="text-gray-700">
-            Convertirse en la plataforma educativa de referencia en Latinoamérica
-            para la enseñanza y análisis de algoritmos de mallado, contribuyendo
-            al avance de la investigación y la formación de ingenieros altamente
-            capacitados.
-          </p>
-        </div>
+        {[
+          {
+            title: "Misión",
+            text: "Entregar una herramienta educativa e interactiva que facilite la comprensión de los procesos de mallado geométrico, promoviendo un aprendizaje más práctico y significativo en la educación superior.",
+            border: "border-[#ADEFD1]",
+          },
+          {
+            title: "Visión",
+            text: "Convertirse en la plataforma educativa de referencia en Latinoamérica para la enseñanza y análisis de algoritmos de mallado, contribuyendo al avance de la investigación y la formación de ingenieros altamente capacitados.",
+            border: "border-[#e83b2b]",
+          },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            className={`bg-white shadow-md rounded-lg p-8 border-t-4 ${item.border} hover:scale-105 transition-transform`}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.2, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-2xl font-bold text-[#0a1b36] mb-4">
+              {item.title}
+            </h2>
+            <p className="text-gray-700">{item.text}</p>
+          </motion.div>
+        ))}
       </div>
 
       {/* Nuestro Equipo */}
